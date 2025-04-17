@@ -2,7 +2,7 @@ module.exports = {
   title: 'Engenharia de Dados Corretora',
   tagline: 'Documentação da plataforma de dados',
   url: 'https://razy-corretora-de-seguros.github.io',
-  baseUrl: '/',
+  baseUrl: '/docs-site/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
