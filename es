@@ -1,0 +1,41 @@
+name: Deploy Docs to GitHub Pages
+
+on:
+  push:
+    branches: [main]       # roda a cada push na branch principal
+
+permissions:
+  contents: read           # requerido pelo checkout
+  pages: write             # libera o publish
+  id-token: write          # libera o deploy (GH Pages v4)
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout do repositório
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # 2. Instala Node (versão LTS)
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # 3. Instala dependências e gera build
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Docusaurus site
+        run: npm run build
+
+      # 4. Publica pasta build/ na branch gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build           # pasta gerada pelo build
+          publish_branch: gh-pages       # branch onde o Pages lê
+          cname: ''                      # opcional: domínio custom

@@ -1,0 +1,16 @@
+{
+  "id": "intro",
+  "title": "Bem-vindo à documentação da Engenharia de Dados Corretora",
+  "description": "Este portal centraliza visão, arquitetura, pipelines e guias de operação do ecossistema de dados da corretora.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/docs/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Razy-Corretora-de-Seguros/docs-site/edit/main/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs"
+}
