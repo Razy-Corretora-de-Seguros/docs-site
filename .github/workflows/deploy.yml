@@ -5,7 +5,7 @@ on:
     branches: [main]       # roda a cada push na branch principal
 
 permissions:
-  contents: read           # requerido pelo checkout
+  contents: write           # requerido pelo checkout
   pages: write             # libera o publish
   id-token: write          # libera o deploy (GH Pages v4)
 
